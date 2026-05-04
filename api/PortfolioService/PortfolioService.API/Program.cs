@@ -39,7 +39,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
                 kvp => kvp.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
             );
 
-        var response = new ApiErrorResponse
+        var response = new ValidationErrorResponse
         {
             Success = false,
             Message = "Validation failed",
