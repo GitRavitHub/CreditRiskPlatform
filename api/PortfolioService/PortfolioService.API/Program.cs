@@ -11,6 +11,9 @@ using System.Security.AccessControl;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioService.API.Models;
 
+//GlobalException Handling
+using PortfolioService.API.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -52,6 +55,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 
 var app = builder.Build();
+
+//GlobalException Handling
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();

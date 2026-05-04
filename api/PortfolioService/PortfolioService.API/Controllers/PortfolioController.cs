@@ -65,4 +65,13 @@ public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationT
 
     return NoContent();
 }
+
+/*testing global exception middleware
+[HttpGet("test-error")]
+public IActionResult TestError()
+{
+    throw new Exception("Testing global exception middleware");
+}
+*/
+
 }
